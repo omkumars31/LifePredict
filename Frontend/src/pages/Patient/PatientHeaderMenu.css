@@ -1,0 +1,179 @@
+/* =========================================================
+   LIFEPREDICT — PATIENT HEADER ACCOUNT MENU
+   Replace the existing static H avatar in the patient topbar
+   with <PatientHeaderMenu />.
+   ========================================================= */
+
+.lp-header-profile-menu {
+  position: relative;
+  z-index: 1000;
+}
+
+.lp-header-avatar-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 42px;
+  height: 42px;
+  padding: 0 5px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.lp-header-avatar-button:hover,
+.lp-header-avatar-button.open {
+  background: #f0f8f8;
+}
+
+.lp-header-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #e6f6f6;
+  color: #137e80;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.lp-header-avatar-chevron {
+  color: #789194;
+  transition: transform 0.2s ease;
+}
+
+.lp-header-avatar-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.lp-header-account-menu {
+  position: absolute;
+  top: calc(100% + 9px);
+  right: 0;
+  width: 220px;
+  padding: 9px;
+  border: 1px solid #dceaea;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(20, 67, 70, 0.13);
+  animation: lpHeaderMenuIn 0.16s ease-out;
+}
+
+.lp-header-account-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px 10px;
+}
+
+.lp-header-account-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #eaf8f7;
+  color: #137e80;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.lp-header-account-summary > div {
+  min-width: 0;
+}
+
+.lp-header-account-summary strong,
+.lp-header-account-summary span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lp-header-account-summary strong {
+  color: #174f53;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.lp-header-account-summary span {
+  margin-top: 3px;
+  color: #8a9fa1;
+  font-size: 8.5px;
+}
+
+.lp-header-menu-divider {
+  height: 1px;
+  margin: 2px 4px 5px;
+  background: #edf3f3;
+}
+
+.lp-header-menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 38px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #315c60;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.lp-header-menu-item:hover {
+  background: #f3fafa;
+  color: #0b8587;
+}
+
+.lp-header-menu-item.logout:hover {
+  background: #fff5f4;
+  color: #bd554e;
+}
+
+.lp-header-menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #f0f8f8;
+  color: #159c9c;
+}
+
+.lp-header-menu-item.logout .lp-header-menu-icon {
+  background: #fff1f0;
+  color: #c45b54;
+}
+
+@keyframes lpHeaderMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 520px) {
+  .lp-header-account-menu {
+    right: -5px;
+    width: 205px;
+  }
+}

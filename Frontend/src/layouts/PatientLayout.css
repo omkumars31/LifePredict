@@ -1,0 +1,370 @@
+.patient-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f5f9f9;
+  color: #164e52;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.patient-sidebar {
+  width: 250px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0f5b60;
+  color: #ffffff;
+  padding: 26px 16px 18px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+
+/* Logo */
+
+.patient-sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 10px;
+  margin-bottom: 42px;
+}
+
+.patient-logo-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #16a6a3;
+  color: #ffffff;
+}
+
+.patient-sidebar-logo span {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+
+/* Navigation */
+
+.patient-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.patient-nav-label {
+  margin: 13px 10px 7px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.patient-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 43px;
+  padding: 0 12px;
+  border-radius: 9px;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.patient-nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.patient-nav-link.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.patient-nav-link.active svg {
+  color: #67d4d0;
+}
+
+
+/* Sidebar bottom */
+
+.patient-sidebar-bottom {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.patient-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px 14px;
+}
+
+.patient-user-avatar,
+.patient-topbar-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.patient-user-avatar {
+  width: 36px;
+  height: 36px;
+  background: #67d4d0;
+  color: #0f5b60;
+  font-size: 13px;
+}
+
+.patient-user-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.patient-user-info strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.patient-user-info span {
+  margin-top: 2px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.patient-logout {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.patient-logout:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.patient-main {
+  flex: 1;
+  min-width: 0;
+  margin-left: 250px;
+}
+
+
+/* Topbar */
+
+.patient-topbar {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 34px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5eeee;
+}
+
+.patient-topbar-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  color: #7b9799;
+}
+
+.patient-topbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.patient-topbar-avatar {
+  width: 36px;
+  height: 36px;
+  background: #e5f6f5;
+  color: #147d7e;
+  font-size: 13px;
+}
+
+
+/* Page content */
+
+.patient-page-content {
+  padding: 34px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .patient-sidebar {
+    width: 220px;
+  }
+
+  .patient-main {
+    margin-left: 220px;
+  }
+
+  .patient-page-content {
+    padding: 25px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .patient-sidebar {
+    width: 72px;
+    padding: 22px 10px;
+  }
+
+  .patient-sidebar-logo {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .patient-sidebar-logo span {
+    display: none;
+  }
+
+  .patient-nav-label,
+  .patient-nav-link span,
+  .patient-user-info,
+  .patient-logout span {
+    display: none;
+  }
+
+  .patient-nav-link {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .patient-user {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .patient-logout {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .patient-main {
+    margin-left: 72px;
+  }
+
+  .patient-topbar {
+    padding: 0 20px;
+  }
+
+  .patient-page-content {
+    padding: 20px;
+  }
+
+}
+
+/* =========================================================
+   LIFE PREDICT — COMMON PAGE SPACING
+   Dashboard reference
+   ========================================================= */
+
+.patient-page-content {
+  box-sizing: border-box;
+  padding: 58px 55px 60px;
+}
+
+
+/* All inner page wrappers use the SAME outer spacing.
+   Do not add another layer of page padding. */
+
+.patient-page-content > .health-data-page,
+.patient-page-content > .predictions-page,
+.patient-page-content > .prediction-history-page,
+.patient-page-content > .wif-page,
+.patient-page-content > .nutrition-page,
+.patient-page-content > .alerts-page,
+.patient-page-content > .profile-page {
+  box-sizing: border-box;
+  padding: 0 !important;
+  margin: 0;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .patient-page-content {
+    padding: 48px 34px 52px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .patient-page-content {
+    padding: 32px 20px 42px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .patient-page-content {
+    padding: 26px 14px 36px;
+  }
+
+}

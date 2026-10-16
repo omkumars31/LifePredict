@@ -1,0 +1,559 @@
+/* =========================================================
+   LIFE PREDICT - HEALTH DATA PAGE
+========================================================= */
+
+.health-data-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 38px 42px 70px;
+  box-sizing: border-box;
+  color: #164f56;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.health-page-header {
+  margin-bottom: 34px;
+}
+
+.back-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 30px;
+  color: #6b8d92;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back-button:hover {
+  color: #0c9fa8;
+}
+
+.page-eyebrow {
+  margin-bottom: 8px;
+  color: #0b9da5;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.health-page-header h1 {
+  margin: 0 0 12px;
+  color: #164f56;
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.health-page-header p {
+  max-width: 850px;
+  margin: 0;
+  color: #719298;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.health-form {
+  width: 100%;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.health-card {
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 30px 32px 34px;
+  background: #ffffff;
+  border: 1px solid #d9e9ea;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(22, 79, 86, 0.04);
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   CARD HEADING
+   Icon stays on LEFT
+   Heading text stays CENTERED
+========================================================= */
+
+.card-heading {
+  position: relative;
+
+  width: 100%;
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+/* Icon stays on the left side */
+
+.card-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+
+  border-radius: 14px;
+  background: #eafafa;
+  color: #0ca3aa;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Heading content remains centered */
+
+.card-heading > div:last-child {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-eyebrow {
+  margin-bottom: 5px;
+  color: #0b9da5;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.card-heading h2 {
+  margin: 0;
+  color: #164f56;
+  font-size: 25px;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.card-heading p {
+  margin: 8px 0 0;
+  color: #7b9ca1;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 26px;
+}
+
+.form-group {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.form-group label {
+  margin-bottom: 9px;
+  color: #285f66;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-group label span {
+  color: #8ca8ac;
+  font-weight: 500;
+}
+
+.form-group label .optional {
+  margin-left: 7px;
+  color: #9aafb2;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   INPUTS / SELECTS / TEXTAREA
+========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid #d5e5e7;
+  border-radius: 11px;
+
+  background: #ffffff;
+  color: #164f56;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-group input,
+.form-group select {
+  height: 50px;
+  padding: 0 15px;
+}
+
+.form-group textarea {
+  min-height: 110px;
+  padding: 14px 15px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #a9bdc0;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: #b9d9dc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #0da5ad;
+
+  box-shadow: 0 0 0 3px rgba(13, 165, 173, 0.1);
+
+  background: #fcffff;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+/* =========================================================
+   NUMBER INPUT
+========================================================= */
+
+.form-group input[type="number"] {
+  appearance: auto;
+}
+
+/* =========================================================
+   SMALL HELPER TEXT
+========================================================= */
+
+.form-group small {
+  margin-top: 7px;
+  color: #89a4a8;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   CONDITIONAL FIELD
+   Cigarettes Today
+========================================================= */
+
+.form-group input[name="cigarettesToday"] {
+  border-color: #d5e5e7;
+}
+
+/* =========================================================
+   INFORMATION BOX
+========================================================= */
+
+.checkin-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  width: 100%;
+  margin: 6px 0 24px;
+  padding: 18px 20px;
+
+  box-sizing: border-box;
+
+  background: #effafa;
+  border: 1px solid #d2eeee;
+  border-radius: 15px;
+}
+
+.info-icon {
+  flex: 0 0 auto;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #d8f4f5;
+  color: #0b9da5;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.checkin-info strong {
+  display: block;
+  margin-bottom: 4px;
+
+  color: #285f66;
+  font-size: 14px;
+}
+
+.checkin-info p {
+  margin: 0;
+
+  color: #729398;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.cancel-button,
+.save-button {
+  min-height: 48px;
+  padding: 0 22px;
+
+  border-radius: 11px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.cancel-button {
+  border: 1px solid #d5e4e6;
+  background: #ffffff;
+  color: #6c898e;
+}
+
+.cancel-button:hover {
+  background: #f7fbfb;
+}
+
+.save-button {
+  border: 1px solid #0ca3aa;
+  background: #0ca3aa;
+  color: #ffffff;
+
+  box-shadow: 0 7px 16px rgba(12, 163, 170, 0.18);
+}
+
+.save-button:hover {
+  background: #078f96;
+  border-color: #078f96;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 9px 20px rgba(12, 163, 170, 0.23);
+}
+
+.save-button:active,
+.cancel-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .health-data-page {
+    padding: 30px 24px 55px;
+  }
+
+  .health-page-header h1 {
+    font-size: 34px;
+  }
+
+  .health-card {
+    padding: 26px 24px 30px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .form-group.full-width {
+    grid-column: auto;
+  }
+
+  .card-heading {
+    min-height: 70px;
+  }
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .card-heading h2 {
+    font-size: 23px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .health-data-page {
+    padding: 24px 16px 45px;
+  }
+
+  .health-page-header {
+    margin-bottom: 25px;
+  }
+
+  .health-page-header h1 {
+    font-size: 30px;
+  }
+
+  .health-page-header p {
+    font-size: 14px;
+  }
+
+  .health-card {
+    padding: 23px 18px 25px;
+    border-radius: 16px;
+  }
+
+  /*
+     On very small screens the icon becomes
+     slightly smaller but still stays on the left.
+  */
+
+  .card-heading {
+    min-height: 62px;
+    padding-left: 58px;
+  }
+
+  .card-icon {
+    left: 0;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+  }
+
+  .card-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .card-heading h2 {
+    font-size: 21px;
+  }
+
+  .card-heading p {
+    font-size: 13px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cancel-button,
+  .save-button {
+    width: 100%;
+  }
+}
+
+.form-error {
+  margin-top: 20px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: #fff1f1;
+  color: #b42318;
+  border: 1px solid #f5c2c2;
+  font-weight: 600;
+}
+
+.form-success {
+  margin-top: 20px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: #ecfdf3;
+  color: #067647;
+  border: 1px solid #abefc6;
+  font-weight: 600;
+}
+
+.save-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

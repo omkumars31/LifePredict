@@ -1,0 +1,1255 @@
+/* =========================================================
+   LIFE PREDICT - PATIENT PREDICTION HISTORY
+   ========================================================= */
+
+.prediction-history-page {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+
+  padding: 44px 34px 72px;
+
+  background: #f5f9f9;
+  color: #164e52;
+}
+
+/* ---------------------------------------------------------
+   PAGE HEADER
+   --------------------------------------------------------- */
+
+.prediction-history-header {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 32px;
+
+  margin-bottom: 42px;
+}
+
+.prediction-history-header > div {
+  min-width: 0;
+}
+
+.page-eyebrow {
+  display: block;
+
+  margin: 0 0 9px;
+
+  color: #0c9a9a;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  line-height: 1.4;
+
+  text-transform: uppercase;
+}
+
+.prediction-history-header h1 {
+  margin: 0;
+
+  color: #164e52;
+
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.15;
+
+  letter-spacing: -1.1px;
+}
+
+.prediction-history-header p {
+  max-width: 760px;
+
+  margin: 9px 0 0;
+
+  color: #718f92;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------
+   REFRESH BUTTON
+   --------------------------------------------------------- */
+
+.history-refresh-button {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 43px;
+
+  padding: 0 17px;
+
+  border: 1px solid #cce4e4;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #147d7e;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.history-refresh-button:hover {
+  background: #f1fbfb;
+  border-color: #a9d6d6;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 14px rgba(20, 80, 82, 0.06);
+}
+
+/* ---------------------------------------------------------
+   PROGRESS VIEW
+   --------------------------------------------------------- */
+
+.history-view-section {
+  width: 100%;
+
+  margin: 0 0 22px;
+}
+
+.history-view-heading {
+  width: 100%;
+
+  display: block;
+}
+
+.history-view-heading > div:first-child {
+  min-width: 0;
+}
+
+.history-section-eyebrow {
+  display: block;
+
+  margin: 0 0 7px;
+
+  color: #0c9a9a;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+  line-height: 1.4;
+}
+
+.history-view-heading h2 {
+  margin: 0;
+
+  color: #164e52;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+
+  letter-spacing: -0.35px;
+}
+
+.history-view-heading p {
+  max-width: 900px;
+
+  margin: 7px 0 0;
+
+  color: #718f92;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* ---------------------------------------------------------
+   DAILY / WEEKLY / MONTHLY FILTER
+   --------------------------------------------------------- */
+
+.history-filter {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  margin-top: 16px;
+
+  padding: 4px;
+
+  border: 1px solid #dce9e9;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 7px rgba(20, 80, 82, 0.025);
+}
+
+.history-filter button {
+  min-height: 31px;
+
+  padding: 0 13px;
+
+  border: 1px solid transparent;
+  border-radius: 6px;
+
+  background: transparent;
+  color: #71888a;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.history-filter button:hover {
+  background: #f1fafa;
+  color: #147d7e;
+}
+
+.history-filter button.active {
+  border-color: #bfe0e0;
+
+  background: #eaf8f7;
+  color: #147d7e;
+}
+
+/* ---------------------------------------------------------
+   SUMMARY STRIP
+   --------------------------------------------------------- */
+
+.history-summary-strip {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin: 0 0 18px;
+}
+
+.history-summary-item {
+  min-width: 0;
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+
+  border: 1px solid #dfeaea;
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 8px rgba(20, 80, 82, 0.025);
+}
+
+.history-summary-item span {
+  display: block;
+
+  margin: 0 0 5px;
+
+  color: #82999a;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+}
+
+.history-summary-item strong {
+  display: block;
+
+  color: #164e52;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+/* ---------------------------------------------------------
+   INFORMATION BANNER
+   --------------------------------------------------------- */
+
+.history-info-banner {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin: 0 0 20px;
+
+  padding: 14px 16px;
+
+  border: 1px solid #dceaea;
+  border-radius: 11px;
+
+  background: #f8fcfc;
+}
+
+.history-info-banner > svg {
+  flex: 0 0 auto;
+
+  margin-top: 2px;
+
+  color: #159c9c;
+}
+
+.history-info-banner > div {
+  min-width: 0;
+}
+
+.history-info-banner strong {
+  display: block;
+
+  margin: 0 0 4px;
+
+  color: #315c60;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.history-info-banner p {
+  max-width: 900px;
+
+  margin: 0;
+
+  color: #71888a;
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* ---------------------------------------------------------
+   HISTORY LIST
+   --------------------------------------------------------- */
+
+.prediction-history-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+/* ---------------------------------------------------------
+   HISTORY CARD
+   --------------------------------------------------------- */
+
+.prediction-history-card {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 24px;
+
+  border: 1px solid #dce9e9;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 8px rgba(20, 80, 82, 0.025);
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.prediction-history-card:hover {
+  box-shadow:
+    0 7px 20px rgba(20, 80, 82, 0.055);
+
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------
+   CARD HEADER
+   --------------------------------------------------------- */
+
+.history-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 17px;
+
+  border-bottom: 1px solid #edf2f2;
+}
+
+.history-date {
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 9px;
+
+  color: #71888a;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.history-date > svg {
+  flex: 0 0 auto;
+
+  margin-top: 1px;
+
+  color: #7c999b;
+}
+
+.history-date > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.history-date strong {
+  display: block;
+
+  color: #607f82;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+.history-date span {
+  display: block;
+
+  color: #8aa0a2;
+
+  font-size: 10.5px;
+  font-weight: 500;
+
+  line-height: 1.4;
+}
+
+/* ---------------------------------------------------------
+   RESULT BADGE
+   --------------------------------------------------------- */
+
+.history-result {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 9px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+.history-result.positive {
+  background: #fff1ef;
+  color: #c55b5b;
+}
+
+.history-result.negative {
+  background: #eaf8f7;
+  color: #147d7e;
+}
+
+/* ---------------------------------------------------------
+   WEEKLY / MONTHLY TRACKING
+   --------------------------------------------------------- */
+
+.period-tracking-line {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 15px;
+
+  color: #71888a;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.period-tracking-line svg {
+  flex: 0 0 auto;
+
+  color: #159c9c;
+}
+
+/* ---------------------------------------------------------
+   MAIN PROBABILITY
+   --------------------------------------------------------- */
+
+.history-probability {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 18px;
+}
+
+.history-probability span {
+  min-width: 0;
+
+  color: #71888a;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1.45;
+}
+
+.history-probability strong {
+  flex: 0 0 auto;
+
+  color: #164e52;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.6px;
+}
+
+.history-bar {
+  width: 100%;
+
+  height: 7px;
+
+  margin: 11px 0 20px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #e8f1f1;
+}
+
+.history-bar > div {
+  height: 100%;
+
+  min-width: 0;
+
+  border-radius: inherit;
+
+  background: #159c9c;
+
+  transition: width 0.5s ease;
+}
+
+/* ---------------------------------------------------------
+   HEALTH SNAPSHOT
+   --------------------------------------------------------- */
+
+.history-snapshot {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-top: 0;
+}
+
+.history-snapshot > div {
+  min-width: 0;
+  min-height: 88px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 4px;
+
+  padding: 13px 14px;
+
+  border: 1px solid #edf2f2;
+  border-radius: 10px;
+
+  background: #f7fbfb;
+}
+
+.history-snapshot svg {
+  width: 16px;
+  height: 16px;
+
+  margin: 0 0 2px;
+
+  color: #159c9c;
+}
+
+.history-snapshot span {
+  display: block;
+
+  color: #82999a;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+.history-snapshot strong {
+  display: block;
+
+  color: #164e52;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+/* ---------------------------------------------------------
+   PROBABILITY BREAKDOWN
+   --------------------------------------------------------- */
+
+.history-probability-breakdown {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr) auto;
+
+  column-gap: 20px;
+  row-gap: 7px;
+
+  margin-top: 18px;
+  padding-top: 16px;
+
+  border-top: 1px solid #edf2f2;
+}
+
+.history-probability-breakdown span {
+  color: #71888a;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  line-height: 1.4;
+}
+
+.history-probability-breakdown strong {
+  color: #315c60;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-align: right;
+}
+
+/* =========================================================
+   WHAT CHANGED
+   ========================================================= */
+
+.health-comparison {
+  margin-top: 22px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e7eeee;
+}
+
+/* ---------------------------------------------------------
+   COMPARISON HEADER
+   --------------------------------------------------------- */
+
+.comparison-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.comparison-header > div:first-child {
+  min-width: 0;
+}
+
+.comparison-eyebrow {
+  display: block;
+
+  margin: 0 0 4px;
+
+  color: #82999a;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+  line-height: 1.3;
+}
+
+.comparison-header h3 {
+  margin: 0;
+
+  color: #164e52;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+.comparison-subtitle {
+  margin: 4px 0 0;
+
+  color: #8aa0a2;
+
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+/* ---------------------------------------------------------
+   OVERALL STATUS
+   --------------------------------------------------------- */
+
+.comparison-status {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.comparison-status.improved {
+  background: #eaf8f2;
+  color: #2a806b;
+}
+
+.comparison-status.declined {
+  background: #fff1ec;
+  color: #b65d42;
+}
+
+.comparison-status.same {
+  background: #edf5f6;
+  color: #537b80;
+}
+
+/* =========================================================
+   COMPARISON GRID
+   ========================================================= */
+
+.comparison-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-top: 15px;
+}
+
+/* ---------------------------------------------------------
+   COMPARISON ITEM
+   --------------------------------------------------------- */
+
+.comparison-item {
+  min-width: 0;
+
+  padding: 13px;
+
+  border: 1px solid #e6eeee;
+  border-radius: 11px;
+
+  background: #fbfdfd;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.comparison-item:hover {
+  border-color: #d6e6e6;
+
+  background: #f9fcfc;
+}
+
+/* ---------------------------------------------------------
+   ITEM TOP
+   --------------------------------------------------------- */
+
+.comparison-item-top {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  min-width: 0;
+}
+
+.comparison-item-icon {
+  width: 27px;
+  height: 27px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #edf7f6;
+  color: #537b80;
+}
+
+.comparison-item.improved
+  .comparison-item-icon {
+  background: #eaf8f2;
+  color: #2a806b;
+}
+
+.comparison-item.increased
+  .comparison-item-icon {
+  background: #fff1ec;
+  color: #b65d42;
+}
+
+.comparison-item.same
+  .comparison-item-icon {
+  background: #edf5f6;
+  color: #537b80;
+}
+
+.comparison-item-top > span {
+  min-width: 0;
+
+  overflow: hidden;
+
+  color: #607f82;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   PREVIOUS → CURRENT VALUES
+   ========================================================= */
+
+.comparison-values {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 12px;
+}
+
+.comparison-values > div {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.comparison-values small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #9aafb1;
+
+  font-size: 7.5px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.comparison-values strong {
+  display: block;
+
+  color: #164e52;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+}
+
+.comparison-arrow {
+  flex: 0 0 auto;
+
+  margin-top: 12px;
+
+  color: #a1b3b5;
+}
+
+/* ---------------------------------------------------------
+   CHANGE VALUE
+   --------------------------------------------------------- */
+
+.comparison-change {
+  margin-top: 10px;
+
+  padding-top: 8px;
+
+  border-top: 1px solid #edf2f2;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  line-height: 1.35;
+}
+
+.comparison-change.improved {
+  color: #2a806b;
+}
+
+.comparison-change.increased {
+  color: #b65d42;
+}
+
+.comparison-change.same {
+  color: #71888a;
+}
+
+/* ---------------------------------------------------------
+   COMPARISON REFERENCE
+   --------------------------------------------------------- */
+
+.comparison-reference {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  margin-top: 13px;
+
+  color: #8aa0a2;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+}
+
+.comparison-reference strong {
+  color: #607f82;
+
+  font-weight: 700;
+}
+
+.comparison-reference svg {
+  color: #9aafb1;
+}
+
+/* =========================================================
+   FIRST PERIOD
+   ========================================================= */
+
+.first-period-message {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  padding: 14px 15px;
+
+  border: 1px solid #e0ecec;
+  border-radius: 10px;
+
+  background: #f8fcfc;
+}
+
+.first-period-message > div:first-child {
+  width: 27px;
+  height: 27px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #eaf8f7;
+  color: #159c9c;
+}
+
+.first-period-message > div:last-child {
+  min-width: 0;
+}
+
+.first-period-message strong {
+  display: block;
+
+  margin: 0 0 3px;
+
+  color: #315c60;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.first-period-message p {
+  margin: 0;
+
+  color: #71888a;
+
+  font-size: 10px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.history-empty-state {
+  padding: 54px 28px;
+
+  border: 1px solid #dce9e9;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  text-align: center;
+
+  box-shadow:
+    0 2px 8px rgba(20, 80, 82, 0.025);
+}
+
+.history-empty-icon {
+  width: 56px;
+  height: 56px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eaf8f7;
+  color: #159c9c;
+}
+
+.history-empty-state h2 {
+  margin: 0;
+
+  color: #164e52;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.history-empty-state p {
+  max-width: 520px;
+
+  margin: 8px auto 0;
+
+  color: #71888a;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .prediction-history-page {
+    padding: 40px 28px 64px;
+  }
+
+  .comparison-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .prediction-history-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .history-refresh-button {
+    align-self: flex-start;
+  }
+
+  .history-summary-strip {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .history-snapshot {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .comparison-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .prediction-history-page {
+    padding: 32px 20px 56px;
+  }
+
+  .prediction-history-header {
+    margin-bottom: 34px;
+  }
+
+  .prediction-history-header h1 {
+    font-size: 32px;
+  }
+
+  .prediction-history-header p {
+    font-size: 13px;
+  }
+
+  .history-view-heading h2 {
+    font-size: 19px;
+  }
+
+  .history-card-top {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .history-result {
+    align-self: flex-start;
+  }
+
+  .comparison-header {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .comparison-status {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .prediction-history-page {
+    padding: 28px 14px 48px;
+  }
+
+  .history-summary-strip,
+  .history-snapshot,
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-filter {
+    width: 100%;
+  }
+
+  .history-filter button {
+    flex: 1;
+  }
+
+  .history-probability {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+  .history-probability strong {
+    font-size: 25px;
+  }
+
+  .history-probability-breakdown {
+    column-gap: 12px;
+  }
+
+  .comparison-values {
+    max-width: 280px;
+  }
+}

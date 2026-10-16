@@ -1,0 +1,1240 @@
+/* =========================================================
+   LIFEPREDICT — PATIENT DASHBOARD V2
+   Scoped with lp-* classes so old Dashboard.css rules cannot
+   distort the new layout.
+   ========================================================= */
+
+.lp-dashboard {
+  --lp-ink: #174f53;
+  --lp-ink-dark: #103f43;
+  --lp-teal: #159c9c;
+  --lp-teal-dark: #0b8587;
+  --lp-mint: #eefafa;
+  --lp-bg: #f4f9f9;
+  --lp-border: #dceaea;
+  --lp-border-soft: #eaf2f2;
+  --lp-muted: #789194;
+  --lp-muted-light: #93a7a9;
+  --lp-white: #ffffff;
+  --lp-shadow: 0 10px 30px rgba(23, 79, 83, 0.045);
+
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  color: var(--lp-ink);
+}
+
+/* =========================================================
+   COMMON
+   ========================================================= */
+
+.lp-dashboard button {
+  font: inherit;
+}
+
+.lp-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--lp-teal);
+  font-size: 9px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.lp-text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--lp-teal-dark);
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.lp-text-button:hover {
+  gap: 9px;
+  color: var(--lp-ink-dark);
+}
+
+.lp-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.lp-card-heading h2,
+.lp-overview-title-row h2,
+.lp-lifestyle-heading h2,
+.lp-journey-card h2 {
+  margin: 0;
+  color: var(--lp-ink);
+  font-weight: 760;
+  letter-spacing: -0.55px;
+}
+
+.lp-card-heading h2 {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.lp-heading-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 10px;
+  background: var(--lp-mint);
+  color: var(--lp-teal);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.lp-dashboard-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 26px;
+}
+
+.lp-hero-copy {
+  max-width: 800px;
+}
+
+.lp-hero-copy h1 {
+  margin: 0;
+  color: var(--lp-ink-dark);
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1;
+  font-weight: 760;
+  letter-spacing: -2.3px;
+}
+
+.lp-hero-copy p {
+  max-width: 730px;
+  margin: 13px 0 13px;
+  color: var(--lp-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.lp-last-update {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--lp-muted-light);
+  font-size: 8.5px;
+  font-weight: 700;
+}
+
+.lp-last-update > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lp-teal);
+}
+
+.lp-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-height: 43px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--lp-teal);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(21, 156, 156, 0.15);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.lp-primary-button:hover {
+  background: var(--lp-teal-dark);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   HEALTH OVERVIEW — PRIMARY CARD
+   ========================================================= */
+
+.lp-overview-card {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(560px, 1.55fr);
+  gap: 0;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border: 1px solid var(--lp-border);
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: var(--lp-shadow);
+}
+
+.lp-overview-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 25px 26px;
+  border-right: 1px solid var(--lp-border-soft);
+}
+
+.lp-overview-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lp-overview-title-row h2 {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.lp-risk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 6px 8px;
+  border-radius: 30px;
+  font-size: 7.5px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.lp-risk-badge > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.lp-risk-badge.positive {
+  color: #27855b;
+  background: #eaf8f0;
+}
+
+.lp-risk-badge.moderate {
+  color: #b77918;
+  background: #fff5e4;
+}
+
+.lp-risk-badge.attention {
+  color: #c24c45;
+  background: #fff0ef;
+}
+
+.lp-risk-badge.neutral {
+  color: #72898b;
+  background: #eef3f3;
+}
+
+.lp-risk-area {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 21px;
+}
+
+.lp-risk-number {
+  flex-shrink: 0;
+  color: var(--lp-ink-dark);
+  font-size: 48px;
+  line-height: 0.95;
+  font-weight: 780;
+  letter-spacing: -2.5px;
+}
+
+.lp-risk-number small {
+  margin-left: 2px;
+  font-size: 21px;
+  letter-spacing: -0.5px;
+}
+
+.lp-risk-number.moderate {
+  color: #c8841d;
+}
+
+.lp-risk-number.attention {
+  color: #c24c45;
+}
+
+.lp-risk-number.positive {
+  color: #2a885e;
+}
+
+.lp-risk-copy {
+  min-width: 0;
+}
+
+.lp-risk-copy strong {
+  display: block;
+  color: var(--lp-ink);
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+.lp-risk-copy p {
+  max-width: 270px;
+  margin: 6px 0 9px;
+  color: var(--lp-muted);
+  font-size: 8.5px;
+  line-height: 1.5;
+}
+
+.lp-signal-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+  align-content: center;
+  padding: 22px;
+}
+
+.lp-signal-card {
+  min-width: 0;
+  min-height: 145px;
+  padding: 13px;
+  border: 1px solid var(--lp-border-soft);
+  border-radius: 11px;
+  background: #fbfdfd;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lp-signal-card:hover {
+  border-color: #c7e0e0;
+  background: #f8fcfc;
+  transform: translateY(-1px);
+}
+
+.lp-signal-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.lp-signal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 9px;
+  background: var(--lp-mint);
+  color: var(--lp-teal);
+}
+
+.lp-signal-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #9baeb0;
+}
+
+.lp-signal-dot.positive {
+  background: #4fa878;
+}
+
+.lp-signal-dot.watch {
+  background: #d29a3a;
+}
+
+.lp-signal-dot.attention {
+  background: #d2675f;
+}
+
+.lp-signal-label {
+  display: block;
+  color: var(--lp-muted-light);
+  font-size: 7px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.lp-signal-value {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 7px;
+  color: var(--lp-ink);
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 760;
+  letter-spacing: -0.6px;
+}
+
+.lp-signal-value small {
+  color: var(--lp-muted);
+  font-size: 7px;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.lp-signal-state {
+  display: block;
+  margin-top: 8px;
+  font-size: 7.5px;
+  font-weight: 750;
+}
+
+.lp-signal-state.positive {
+  color: #398760;
+}
+
+.lp-signal-state.watch {
+  color: #b67a20;
+}
+
+.lp-signal-state.attention {
+  color: #c25750;
+}
+
+.lp-signal-state.neutral {
+  color: var(--lp-muted-light);
+}
+
+/* =========================================================
+   INSIGHT ROW
+   ========================================================= */
+
+.lp-insight-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.lp-attention-card,
+.lp-insight-card,
+.lp-prediction-card,
+.lp-nutrition-card,
+.lp-lifestyle-card,
+.lp-journey-card,
+.lp-activity-card {
+  border: 1px solid var(--lp-border);
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: var(--lp-shadow);
+}
+
+.lp-attention-card,
+.lp-insight-card {
+  min-height: 198px;
+  padding: 19px 21px;
+}
+
+.lp-attention-card {
+  background: linear-gradient(115deg, #fffdf9, #fff);
+  border-color: #efdcbf;
+}
+
+.lp-attention-card.positive {
+  background: linear-gradient(115deg, #fafdfe, #fff);
+  border-color: var(--lp-border);
+}
+
+.lp-attention-value {
+  margin-top: 17px;
+  color: var(--lp-ink-dark);
+  font-size: 24px;
+  font-weight: 760;
+  letter-spacing: -0.8px;
+}
+
+.lp-attention-card p {
+  max-width: 570px;
+  margin: 7px 0 17px;
+  color: var(--lp-muted);
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.lp-insight-intro {
+  max-width: 580px;
+  margin: 16px 0 15px;
+  color: var(--lp-muted);
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.lp-insight-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.lp-insight-point {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 9px;
+  border: 1px solid var(--lp-border-soft);
+  border-radius: 9px;
+  background: #fbfdfd;
+}
+
+.lp-insight-point > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 27px;
+  height: 27px;
+  border-radius: 8px;
+  background: var(--lp-mint);
+  color: var(--lp-teal);
+}
+
+.lp-insight-point div {
+  min-width: 0;
+}
+
+.lp-insight-point strong {
+  display: block;
+  overflow: hidden;
+  color: var(--lp-ink);
+  font-size: 8px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lp-insight-point small {
+  display: block;
+  margin-top: 2px;
+  overflow: hidden;
+  color: var(--lp-muted-light);
+  font-size: 7px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   PREDICTION + NUTRITION
+   ========================================================= */
+
+.lp-secondary-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.45fr)
+    minmax(300px, 0.55fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.lp-prediction-card,
+.lp-nutrition-card {
+  min-height: 245px;
+  padding: 21px 22px;
+}
+
+.lp-prediction-summary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.lp-prediction-score {
+  flex-shrink: 0;
+  color: var(--lp-ink-dark);
+  font-size: 31px;
+  line-height: 1;
+  font-weight: 780;
+  letter-spacing: -1.3px;
+}
+
+.lp-prediction-score.moderate {
+  color: #c8841d;
+}
+
+.lp-prediction-score.attention {
+  color: #c24c45;
+}
+
+.lp-prediction-score.positive {
+  color: #2a885e;
+}
+
+.lp-prediction-summary strong {
+  display: block;
+  color: var(--lp-ink);
+  font-size: 9.5px;
+  font-weight: 800;
+}
+
+.lp-prediction-summary p {
+  max-width: 450px;
+  margin: 4px 0 0;
+  color: var(--lp-muted);
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.lp-factor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 17px;
+}
+
+.lp-factor {
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid var(--lp-border-soft);
+  border-radius: 8px;
+  background: #fbfdfd;
+}
+
+.lp-factor span {
+  display: block;
+  overflow: hidden;
+  color: var(--lp-muted-light);
+  font-size: 7px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lp-factor strong {
+  display: block;
+  margin-top: 4px;
+  overflow: hidden;
+  color: var(--lp-ink);
+  font-size: 9px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lp-outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 34px;
+  margin-top: 16px;
+  padding: 0 12px;
+  border: 1px solid #cfe3e3;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--lp-teal-dark);
+  font-size: 8.5px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.lp-outline-button:hover {
+  border-color: #a7cece;
+  background: #f8fcfc;
+}
+
+.lp-nutrition-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.lp-calorie-line {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 22px;
+}
+
+.lp-calorie-line strong {
+  color: var(--lp-ink-dark);
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 780;
+  letter-spacing: -1.2px;
+}
+
+.lp-calorie-line span {
+  color: var(--lp-muted);
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.lp-calorie-bar {
+  height: 6px;
+  margin-top: 15px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #edf3f3;
+}
+
+.lp-calorie-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--lp-teal);
+}
+
+.lp-calorie-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 7px;
+  color: var(--lp-muted-light);
+  font-size: 8px;
+}
+
+.lp-nutrition-note {
+  margin: 14px 0 0;
+  color: var(--lp-muted);
+  font-size: 9.5px;
+  line-height: 1.5;
+}
+
+.lp-nutrition-card .lp-outline-button {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* =========================================================
+   LIFESTYLE
+   ========================================================= */
+
+.lp-lifestyle-card {
+  margin-bottom: 16px;
+  padding: 20px 22px;
+}
+
+.lp-lifestyle-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.lp-lifestyle-heading h2 {
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.lp-lifestyle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 13px;
+}
+
+.lp-lifestyle-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid var(--lp-border-soft);
+  border-radius: 10px;
+  background: #fbfdfd;
+}
+
+.lp-lifestyle-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: var(--lp-mint);
+  color: var(--lp-teal);
+}
+
+.lp-lifestyle-item div {
+  min-width: 0;
+}
+
+.lp-lifestyle-item small {
+  display: block;
+  color: var(--lp-muted-light);
+  font-size: 6.8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.lp-lifestyle-item strong {
+  display: block;
+  margin-top: 4px;
+  overflow: hidden;
+  color: var(--lp-ink);
+  font-size: 11px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lp-lifestyle-item div > span {
+  display: block;
+  margin-top: 2px;
+  overflow: hidden;
+  color: var(--lp-muted-light);
+  font-size: 7px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lp-change-down {
+  color: #398760 !important;
+}
+
+.lp-change-neutral {
+  color: var(--lp-muted-light) !important;
+}
+
+/* =========================================================
+   JOURNEY
+   ========================================================= */
+
+.lp-journey-card {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(240px, 0.55fr)
+    auto;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 16px;
+  padding: 18px 21px;
+}
+
+.lp-journey-card h2 {
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.lp-journey-card p {
+  max-width: 620px;
+  margin: 5px 0 0;
+  color: var(--lp-muted);
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.lp-journey-progress {
+  min-width: 0;
+}
+
+.lp-journey-progress strong {
+  color: var(--lp-teal);
+  font-size: 21px;
+  line-height: 1;
+}
+
+.lp-journey-progress > span {
+  margin-left: 6px;
+  color: var(--lp-muted-light);
+  font-size: 7px;
+}
+
+.lp-journey-progress > div {
+  height: 6px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #edf3f3;
+}
+
+.lp-journey-progress > div > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--lp-teal);
+}
+
+/* =========================================================
+   ACTIVITY
+   ========================================================= */
+
+.lp-activity-card {
+  padding: 20px 21px;
+}
+
+.lp-activity-list {
+  margin-top: 12px;
+}
+
+.lp-activity-row {
+  display: grid;
+  grid-template-columns:
+    33px
+    minmax(0, 1fr)
+    15px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--lp-border-soft);
+}
+
+.lp-activity-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 9px;
+  background: var(--lp-mint);
+  color: var(--lp-teal);
+}
+
+.lp-activity-row strong {
+  display: block;
+  color: var(--lp-ink);
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+.lp-activity-row p {
+  margin: 4px 0 0;
+  color: var(--lp-muted);
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.lp-activity-row > svg {
+  color: #9ab0b2;
+}
+
+.lp-empty-activity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 13px;
+  border: 1px dashed #d7e6e6;
+  border-radius: 9px;
+  color: var(--lp-muted);
+  font-size: 8px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1180px) {
+  .lp-overview-card {
+    grid-template-columns: 1fr;
+  }
+
+  .lp-overview-main {
+    border-right: 0;
+    border-bottom: 1px solid var(--lp-border-soft);
+  }
+
+  .lp-signal-grid {
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .lp-dashboard {
+    padding: 0;
+  }
+
+  .lp-dashboard-hero {
+    align-items: flex-start;
+  }
+
+  .lp-insight-grid,
+  .lp-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lp-secondary-grid {
+    gap: 13px;
+  }
+
+  .lp-lifestyle-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .lp-journey-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .lp-journey-card > .lp-text-button {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 760px) {
+  .lp-dashboard {
+    padding: 0;
+  }
+
+  .lp-dashboard-hero {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .lp-hero-copy h1 {
+    font-size: 36px;
+    letter-spacing: -1.6px;
+  }
+
+  .lp-primary-button {
+    width: 100%;
+  }
+
+  .lp-overview-main {
+    padding: 20px;
+  }
+
+  .lp-overview-title-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lp-risk-area {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .lp-signal-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    padding: 16px;
+  }
+
+  .lp-signal-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .lp-insight-grid {
+    gap: 13px;
+  }
+
+  .lp-insight-points,
+  .lp-factor-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .lp-lifestyle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lp-lifestyle-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .lp-hero-copy h1 {
+    font-size: 31px;
+  }
+
+  .lp-overview-title-row h2,
+  .lp-card-heading h2 {
+    font-size: 17px;
+  }
+
+  .lp-signal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lp-signal-card:last-child {
+    grid-column: auto;
+  }
+
+  .lp-attention-card,
+  .lp-insight-card,
+  .lp-prediction-card,
+  .lp-nutrition-card,
+  .lp-lifestyle-card,
+  .lp-journey-card,
+  .lp-activity-card {
+    padding: 17px;
+  }
+
+  .lp-prediction-summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .lp-factor-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================================
+   UPCOMING CONSULTATIONS — ADDITIVE STYLES
+   Keeps the existing dashboard styling unchanged while allowing
+   multiple scheduled consultations to be displayed cleanly.
+   ========================================================= */
+
+.lp-consultation-list {
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.lp-consultation-row {
+  grid-template-columns:
+    33px
+    minmax(0, 1fr)
+    15px;
+  align-items: center;
+}
+
+.lp-consultation-content {
+  min-width: 0;
+}
+
+.lp-consultation-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-top: 7px;
+}
+
+.lp-consultation-meta > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--lp-muted-light);
+  font-size: 8px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.lp-consultation-meta > span svg {
+  color: var(--lp-teal);
+  flex-shrink: 0;
+}
+
+.lp-consultation-type {
+  padding: 4px 7px;
+  border-radius: 20px;
+  background: var(--lp-mint);
+  color: var(--lp-teal-dark) !important;
+  font-size: 7.5px !important;
+  font-weight: 800 !important;
+}
+
+@media (max-width: 480px) {
+  .lp-consultation-list {
+    max-height: none;
+  }
+
+  .lp-consultation-meta {
+    gap: 6px 8px;
+  }
+}
+
+
+.lp-activity-button {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  appearance: none;
+}
+
+.lp-activity-button:disabled {
+  cursor: default;
+}
+
+.lp-activity-button:not(:disabled):hover {
+  background: #f5fbfa;
+}
+
+.lp-activity-button:focus-visible {
+  outline: 2px solid #159a8c;
+  outline-offset: 2px;
+}
+
+
+/* Fix default browser styling on Recent Activity buttons */
+.lp-activity-list > .lp-activity-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 0;
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid #e8efef;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Remove divider below the last row */
+.lp-activity-list > .lp-activity-button:last-child {
+  border-bottom: none;
+}
+
+/* Subtle hover effect */
+.lp-activity-list > .lp-activity-button:not(:disabled):hover {
+  background: #f3faf9;
+}
+
+/* Disabled rows should retain the same appearance */
+.lp-activity-list > .lp-activity-button:disabled {
+  opacity: 1;
+  background: transparent;
+  color: inherit;
+  cursor: default;
+}
+
+/* Accessible keyboard focus */
+.lp-activity-list > .lp-activity-button:focus-visible {
+  outline: 2px solid #159a8c;
+  outline-offset: -2px;
+  border-radius: 6px;
+}
+
+/* Keep the activity text and icons aligned */
+.lp-activity-button > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.lp-activity-button > .lp-activity-icon,
+.lp-activity-button > svg:last-child {
+  flex-shrink: 0;
+}

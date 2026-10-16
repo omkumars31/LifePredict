@@ -1,0 +1,54 @@
+
+# Dependencies
+node_modules/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# macOS
+.DS_Store
+
+# Local database files and backups
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+
+# Python virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# ML model artifacts and generated files
+.ipynb_checkpoints/
+
+# Dependencies
+node_modules/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+
+# Logs and OS files
+*.log
+.DS_Store

@@ -1,0 +1,1141 @@
+/* =========================================================
+   DOCTOR CONSULTATIONS
+   \========================================================= */
+.doctor-consultations-page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 34px 36px 60px;
+  box-sizing: border-box;
+}
+/* =========================================================
+   HEADER
+   \========================================================= */
+.doctor-consultations-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+.doctor-consultations-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #0f9290;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.doctor-consultations-header h1 {
+  margin: 0 0 12px;
+  color: #164f56;
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.doctor-consultations-header p {
+  margin: 9px 0 0;
+  color: #71858e;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.doctor-consultations-count {
+  min-width: 180px;
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid #d7e9e8;
+  border-radius: 14px;
+  background: #f9fdfc;
+  box-sizing: border-box;
+}
+.doctor-consultations-count > svg {
+  flex-shrink: 0;
+  color: #15958f;
+}
+.doctor-consultations-count div {
+  display: flex;
+  flex-direction: column;
+}
+.doctor-consultations-count strong {
+  color: #2c4255;
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 780;
+}
+.doctor-consultations-count span {
+  margin-top: 5px;
+  color: #7f9199;
+  font-size: 10px;
+  font-weight: 650;
+}
+/* =========================================================
+   TOOLBAR
+   \========================================================= */
+.consultation-toolbar {
+  position: relative;
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #dce7e8;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow:
+    0 6px 20px rgba(22, 58, 65, 0.035);
+  box-sizing: border-box;
+}
+/* =========================================================
+   SEARCH
+   \========================================================= */
+.consultation-search {
+  width: 300px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 13px;
+  border: 1px solid #dbe7e8;
+  border-radius: 10px;
+  background: #fbfdfd;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+.consultation-search:focus-within {
+  border-color: #9bd5d1;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 3px rgba(15, 146, 144, 0.08);
+}
+.consultation-search svg {
+  flex-shrink: 0;
+  color: #8ea1a8;
+}
+.consultation-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #405666;
+  font-family: inherit;
+  font-size: 12px;
+}
+.consultation-search input::placeholder {
+  color: #9aa9ae;
+}
+/* =========================================================
+   FILTERS
+   \========================================================= */
+.consultation-filters {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+.consultation-filter {
+  height: 38px;
+  padding: 0 13px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #6f8189;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+.consultation-filter:hover {
+  background: #f4f9f8;
+  color: #4e6971;
+}
+.consultation-filter.active {
+  border-color: #d3ece9;
+  background: #eaf8f6;
+  color: #108b87;
+}
+/* =========================================================
+   DATE FILTER
+   \========================================================= */
+.consultation-date-filter {
+  position: relative;
+  flex-shrink: 0;
+}
+.consultation-date-button {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 1px solid #d9e6e7;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #657a84;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+.consultation-date-button:hover {
+  background: #f9fcfc;
+  border-color: #c9dddd;
+}
+.consultation-date-button:focus-visible {
+  outline: 2px solid #8ed4d0;
+  outline-offset: 2px;
+}
+.consultation-date-button svg:first-child {
+  color: #78909a;
+}
+.date-chevron {
+  transition: transform 0.2s ease;
+}
+.date-chevron.open {
+  transform: rotate(180deg);
+}
+.consultation-date-menu {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 7px);
+  right: 0;
+  min-width: 150px;
+  padding: 5px;
+  border: 1px solid #dce7e8;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow:
+    0 12px 28px rgba(22, 58, 65, 0.12);
+}
+.consultation-date-menu button {
+  width: 100%;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #526975;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+.consultation-date-menu button:hover,
+.consultation-date-menu button.selected {
+  background: #eff9f7;
+  color: #148d88;
+}
+/* =========================================================
+   DIRECTORY
+   \========================================================= */
+.consultation-directory {
+  overflow: hidden;
+  border: 1px solid #dce7e8;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow:
+    0 7px 24px rgba(22, 58, 65, 0.035);
+}
+.consultation-directory-header {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 22px;
+  border-bottom: 1px solid #edf1f2;
+  box-sizing: border-box;
+}
+.consultation-directory-header span {
+  display: block;
+  margin-bottom: 5px;
+  color: #8c9ba2;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.consultation-directory-header h2 {
+  margin: 0;
+  color: #293d50;
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 760;
+}
+.consultation-directory-header p {
+  margin: 0;
+  color: #8d9ca3;
+  font-size: 11px;
+}
+/* =========================================================
+   EMPTY STATE
+   \========================================================= */
+.consultation-empty-state {
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 42px 24px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.consultation-empty-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  border: 1px solid #d6ebe8;
+  border-radius: 14px;
+  background: #eff9f7;
+  color: #19938d;
+}
+.consultation-empty-state h3 {
+  margin: 0;
+  color: #304657;
+  font-size: 17px;
+  font-weight: 760;
+}
+.consultation-empty-state p {
+  max-width: 500px;
+  margin: 8px 0 0;
+  color: #91a1a8;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.consultation-empty-action {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid #d0e9e6;
+  border-radius: 9px;
+  background: #eff9f7;
+  color: #148b86;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.consultation-empty-action:hover {
+  background: #e4f5f2;
+  border-color: #bfe0dc;
+  transform: translateY(-1px);
+}
+.consultation-empty-action:focus-visible {
+  outline: 2px solid #8ed4d0;
+  outline-offset: 2px;
+}
+/* =========================================================
+   CONSULTATION LIST
+   \========================================================= */
+.consultation-list {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+/* =========================================================
+   CONSULTATION ROW
+   \========================================================= */
+.consultation-row {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 112px;
+  display: grid;
+  /*
+    1. Time
+    2. Patient
+    3. Consultation
+    4. Format
+    5. Status
+    6. Action
+  */
+  grid-template-columns:
+    90px
+    minmax(0, 1.35fr)
+    minmax(0, 1.15fr)
+    115px
+    95px
+    105px;
+  align-items: center;
+  gap: 11px;
+  padding: 17px 20px;
+  border-bottom: 1px solid #edf1f2;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition:
+    background 0.2s ease;
+}
+.consultation-row:last-child {
+  border-bottom: none;
+}
+.consultation-row:hover {
+  background: #fbfdfd;
+}
+/* =========================================================
+   GRID CHILD SAFETY
+   \========================================================= */
+.consultation-row > * {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* =========================================================
+   TIME
+   \========================================================= */
+.consultation-time {
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.consultation-time strong {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  color: #304658;
+  font-size: 16px;
+  font-weight: 760;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.consultation-time span {
+  margin-top: 4px;
+  color: #71858e;
+  font-size: 10px;
+  font-weight: 650;
+}
+.consultation-time small {
+  display: block;
+  margin-top: 6px;
+  color: #8d9ca3;
+  font-size: 10px;
+  white-space: nowrap;
+}
+/* =========================================================
+   PATIENT
+   \========================================================= */
+.consultation-patient {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  overflow: hidden;
+}
+.consultation-avatar {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #d3ebe9;
+  border-radius: 50%;
+  background: #eff9f7;
+  color: #198e89;
+  font-size: 11px;
+  font-weight: 800;
+}
+.consultation-patient > div:last-child {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.consultation-patient-name {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow: hidden;
+}
+.consultation-patient-name h3 {
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
+  color: #304558;
+  font-size: 14px;
+  font-weight: 750;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.consultation-patient-name span {
+  flex-shrink: 0;
+  padding: 3px 6px;
+  border-radius: 6px;
+  background: #f0f5f5;
+  color: #7f9198;
+  font-size: 9px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+.consultation-patient p {
+  margin: 4px 0 0;
+  overflow: hidden;
+  color: #899ba3;
+  font-size: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* =========================================================
+   CONSULTATION TYPE
+   \========================================================= */
+.consultation-type {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.consultation-type > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #8e9ca2;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+.consultation-type strong {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  color: #4b6270;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.consultation-type small {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: 4px;
+  overflow: hidden;
+  color: #8d9da4;
+  font-size: 10px;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* =========================================================
+   FORMAT / MODE
+   \========================================================= */
+.consultation-mode {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.consultation-mode > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #8e9ca2;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+.consultation-mode strong {
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+  color: #4b6270;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* =========================================================
+   STATUS
+   \========================================================= */
+.consultation-status-column {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.consultation-status-column > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #8e9ca2;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+.consultation-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 750;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+.consultation-status-badge.scheduled {
+  background: #eaf8f6;
+  color: #138c87;
+}
+.consultation-status-badge.completed {
+  background: #edf7ef;
+  color: #4d8e5c;
+}
+.consultation-status-badge.cancelled {
+  background: #fff0f0;
+  color: #bd6262;
+}
+/* =========================================================
+   ACTION
+   \========================================================= */
+.consultation-open-button {
+  width: 105px;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 8px;
+  border: 1px solid #d5e9e7;
+  border-radius: 8px;
+  background: #f3faf8;
+  color: #168a85;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
+  justify-self: end;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.consultation-open-button:hover {
+  background: #e6f6f3;
+  border-color: #bddedb;
+  transform: translateY(-1px);
+}
+.consultation-open-button:focus-visible {
+  outline: 2px solid #8ed4d0;
+  outline-offset: 2px;
+}
+/* =========================================================
+   RESPONSIVE â€” 1250px
+   \========================================================= */
+@media (max-width: 1250px) {
+  .consultation-row {
+    grid-template-columns:
+      85px
+      minmax(0, 1.3fr)
+      minmax(0, 1.1fr)
+      105px
+      90px
+      100px;
+    gap: 9px;
+    padding: 17px 18px;
+  }
+  .consultation-open-button {
+    width: 100px;
+  }
+  .consultation-avatar {
+    width: 42px;
+    height: 42px;
+  }
+}
+/* =========================================================
+   RESPONSIVE â€” 1050px
+   \========================================================= */
+@media (max-width: 1050px) {
+  .consultation-toolbar {
+    flex-wrap: wrap;
+  }
+  .consultation-search {
+    width: 100%;
+  }
+  .consultation-filters {
+    width: 100%;
+    overflow-x: auto;
+    flex: none;
+    padding-bottom: 2px;
+  }
+  .consultation-date-filter {
+    margin-left: auto;
+  }
+  /*
+    Three-column layout.
+    Content remains inside the directory card.
+  */
+  .consultation-row {
+    grid-template-columns:
+      100px
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+    gap: 15px;
+    padding: 17px 20px;
+  }
+  .consultation-mode {
+    grid-column: 1;
+  }
+  .consultation-status-column {
+    grid-column: 2;
+  }
+  .consultation-open-button {
+    grid-column: 3;
+    width: 105px;
+    justify-self: end;
+  }
+}
+/* =========================================================
+   RESPONSIVE â€” 750px
+   \========================================================= */
+@media (max-width: 750px) {
+  .doctor-consultations-page {
+    padding: 27px 18px 45px;
+  }
+  .doctor-consultations-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+  }
+  .doctor-consultations-header h1 {
+    font-size: 28px;
+  }
+  .doctor-consultations-header p {
+    font-size: 12px;
+  }
+  .doctor-consultations-count {
+    width: 100%;
+  }
+  .consultation-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 11px;
+  }
+  .consultation-search {
+    width: 100%;
+  }
+  .consultation-filters {
+    width: 100%;
+  }
+  .consultation-date-filter {
+    width: 100%;
+    margin-left: 0;
+  }
+  .consultation-date-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .consultation-date-menu {
+    left: 0;
+    right: 0;
+  }
+  .consultation-directory-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    padding: 16px 18px;
+  }
+  .consultation-row {
+    grid-template-columns: 1fr;
+    gap: 17px;
+    padding: 19px;
+  }
+  .consultation-time {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .consultation-time small {
+    margin-top: 0;
+  }
+  .consultation-patient {
+    width: 100%;
+  }
+  .consultation-type,
+  .consultation-mode,
+  .consultation-status-column {
+    grid-column: auto;
+  }
+  .consultation-open-button {
+    grid-column: auto;
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+  }
+}
+/* =========================================================
+   RESPONSIVE â€” 480px
+   \========================================================= */
+@media (max-width: 480px) {
+  .doctor-consultations-page {
+    padding: 23px 14px 35px;
+  }
+  .doctor-consultations-header h1 {
+    font-size: 25px;
+  }
+  .doctor-consultations-count {
+    min-height: 60px;
+  }
+  .consultation-filter {
+    padding: 0 11px;
+  }
+  .consultation-directory {
+    border-radius: 13px;
+  }
+  .consultation-empty-state {
+    min-height: 340px;
+    padding: 35px 18px;
+  }
+  .consultation-empty-state h3 {
+    font-size: 16px;
+  }
+  .consultation-empty-state p {
+    font-size: 11px;
+  }
+  .consultation-row {
+    padding: 17px;
+  }
+  .consultation-patient-name h3 {
+    font-size: 13px;
+  }
+}
+/* =========================================================
+   LIFEPREDICT VISUAL REFINEMENT
+   Existing layout / classes / functionality unchanged
+\========================================================= */
+.doctor-consultations-page {
+  width: 100%;
+  max-width: 1500px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 34px 36px 60px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+/* =========================================================
+   PAGE HEADER
+\========================================================= */
+.doctor-consultations-header {
+  gap: 32px;
+  margin-bottom: 30px;
+}
+.doctor-consultations-eyebrow {
+  margin-bottom: 10px;
+  font-size: 11px;
+  letter-spacing: 2.2px;
+}
+.doctor-consultations-header h1 {
+  font-size: 30px;
+  line-height: 1.15;
+}
+.doctor-consultations-header p {
+  margin-top: 11px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+/* =========================================================
+   TODAY COUNT
+\========================================================= */
+.doctor-consultations-count {
+  min-width: 205px;
+  min-height: 78px;
+  padding: 16px 19px;
+  border-radius: 16px;
+}
+.doctor-consultations-count strong {
+  font-size: 27px;
+}
+.doctor-consultations-count span {
+  margin-top: 6px;
+  font-size: 12px;
+}
+/* =========================================================
+   SEARCH + FILTER TOOLBAR
+\========================================================= */
+.consultation-toolbar {
+  min-height: 76px;
+  gap: 16px;
+  padding: 13px 15px;
+  margin-bottom: 24px;
+  border-radius: 17px;
+}
+.consultation-search {
+  width: 330px;
+  height: 48px;
+  padding: 0 15px;
+  border-radius: 11px;
+}
+.consultation-search input {
+  font-size: 14px;
+}
+.consultation-filter {
+  height: 42px;
+  padding: 0 15px;
+  font-size: 13px;
+}
+.consultation-date-button {
+  height: 46px;
+  padding: 0 15px;
+  font-size: 13px;
+}
+/* =========================================================
+   DIRECTORY
+\========================================================= */
+.consultation-directory {
+  border-radius: 18px;
+  box-shadow:
+    0 8px 25px rgba(22, 58, 65, 0.045);
+}
+.consultation-directory-header {
+  min-height: 92px;
+  padding: 20px 27px;
+}
+.consultation-directory-header span {
+  margin-bottom: 7px;
+  font-size: 10px;
+}
+.consultation-directory-header h2 {
+  font-size: 22px;
+}
+.consultation-directory-header p {
+  font-size: 13px;
+}
+/* =========================================================
+   CONSULTATION ROW
+\========================================================= */
+.consultation-row {
+  min-height: 132px;
+  gap: 17px;
+  padding: 21px 24px;
+}
+/* =========================================================
+   TIME
+\========================================================= */
+.consultation-time strong {
+  font-size: 18px;
+}
+.consultation-time span {
+  margin-top: 5px;
+  font-size: 13px;
+}
+.consultation-time small {
+  margin-top: 8px;
+  font-size: 12px;
+}
+/* =========================================================
+   PATIENT
+\========================================================= */
+.consultation-patient {
+  gap: 14px;
+}
+.consultation-avatar {
+  width: 52px;
+  height: 52px;
+  font-size: 13px;
+}
+.consultation-patient-name {
+  gap: 9px;
+}
+.consultation-patient-name h3 {
+  font-size: 16px;
+}
+.consultation-patient-name span {
+  padding: 4px 8px;
+  font-size: 10px;
+}
+.consultation-patient p {
+  margin-top: 6px;
+  font-size: 12px;
+}
+/* =========================================================
+   TYPE / MODE / STATUS
+\========================================================= */
+.consultation-type > span,
+.consultation-mode > span,
+.consultation-status-column > span {
+  margin-bottom: 8px;
+  font-size: 10px;
+}
+.consultation-type strong {
+  font-size: 14px;
+}
+.consultation-type small {
+  margin-top: 6px;
+  font-size: 11px;
+}
+.consultation-mode strong {
+  gap: 8px;
+  font-size: 14px;
+}
+.consultation-status-badge {
+  padding: 7px 10px;
+  font-size: 11px;
+}
+/* =========================================================
+   OPEN BUTTON
+\========================================================= */
+.consultation-open-button {
+  min-height: 40px;
+  max-width: 120px;
+  padding: 0 11px;
+  border-radius: 9px;
+  font-size: 12px;
+}
+/* =========================================================
+   EMPTY STATE
+\========================================================= */
+.consultation-empty-state {
+  min-height: 430px;
+  padding: 50px 28px;
+}
+.consultation-empty-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+}
+.consultation-empty-state h3 {
+  font-size: 20px;
+}
+.consultation-empty-state p {
+  max-width: 540px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.consultation-empty-action {
+  min-height: 44px;
+  margin-top: 21px;
+  padding: 0 18px;
+  font-size: 13px;
+}
+/* =========================================================
+   PAGE NOTE
+\========================================================= */
+.consultation-page-note {
+  margin-top: 20px;
+  padding: 15px 17px;
+  border-radius: 11px;
+}
+.consultation-page-note p {
+  font-size: 12px;
+}
+/* =========================================================
+   LOADING / ERROR
+\========================================================= */
+.consultations-state-card {
+  min-height: 430px;
+  padding: 45px;
+}
+.consultations-state-card h3 {
+  margin-top: 16px;
+  font-size: 19px;
+}
+.consultations-state-card p {
+  margin-top: 9px;
+  font-size: 14px;
+}
+.consultations-retry-button {
+  margin-top: 19px;
+  padding: 11px 16px;
+  font-size: 13px;
+}
+/* =========================================================
+   RESPONSIVE
+\========================================================= */
+@media (max-width: 750px) {
+  .doctor-consultations-page {
+    padding: 28px 20px 45px;
+  }
+  .doctor-consultations-header h1 {
+    font-size: 30px;
+  }
+  .doctor-consultations-header p {
+    font-size: 14px;
+  }
+  .doctor-consultations-count {
+    min-height: 76px;
+  }
+  .consultation-row {
+    padding: 21px;
+    gap: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .doctor-consultations-page {
+    padding: 24px 16px 40px;
+  }
+  .doctor-consultations-header h1 {
+    font-size: 27px;
+  }
+  .consultation-directory-header {
+    padding: 19px 20px;
+  }
+  .consultation-row {
+    padding: 20px;
+  }
+}
+/* Balanced consultation columns and tighter metadata spacing */
+.consultation-row {
+  column-gap: 14px;
+}
+.consultation-type-column,
+.consultation-format-column,
+.consultation-status-column {
+  min-width: 0;
+}
+.consultation-type-column,
+.consultation-format-column {
+  padding-right: 2px;
+}
+@media (max-width: 1180px) {
+  .consultation-row {
+    grid-template-columns: 88px minmax(140px, 1.1fr) minmax(125px, 0.9fr) minmax(115px, 0.8fr) 90px 100px;
+    column-gap: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

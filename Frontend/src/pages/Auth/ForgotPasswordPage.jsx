@@ -29,7 +29,7 @@ function ForgotPasswordPage() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5001/api/auth/forgot-password",
+        "https://lifepredict-production.up.railway.app/api/auth/forgot-password",
         {
           method: "POST",
           headers: {

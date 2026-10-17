@@ -12,7 +12,7 @@ import {
 
 import "./Profile.css";
 
-const API_URL = "http://localhost:5001";
+const API_URL = "https://lifepredict-production.up.railway.app";
 
 const conditionOptions = [
   "Diabetes",

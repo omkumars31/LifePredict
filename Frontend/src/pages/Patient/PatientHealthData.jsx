@@ -58,7 +58,7 @@ const PatientHealthData = () => {
 
       try {
         const response = await fetch(
-          "http://localhost:5001/api/health-records/today",
+          "https://lifepredict-production.up.railway.app/api/health-records/today",
           {
             method: "GET",
             headers: {
@@ -245,7 +245,7 @@ const PatientHealthData = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5001/api/health-records",
+        "https://lifepredict-production.up.railway.app/api/health-records",
         {
           method: "POST",
           headers: {

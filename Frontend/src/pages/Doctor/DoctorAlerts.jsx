@@ -17,7 +17,7 @@ import {
   HeartPulse,
 } from "lucide-react";
 import "./DoctorAlerts.css";
-const API_BASE = "http://localhost:5001/api";
+const API_BASE = "https://lifepredict-production.up.railway.app/api";
 /* =========================================================
    PRIORITY HELPERS
 \========================================================= */

@@ -22,7 +22,7 @@ import {
 
 import "./WhatIfSimulation.css";
 
-const API_URL = "http://localhost:5001/api/health-records";
+const API_URL = "https://lifepredict-production.up.railway.app/api/health-records";
 
 const INDIA_TIMEZONE = "Asia/Kolkata";
 

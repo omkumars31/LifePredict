@@ -14,7 +14,7 @@ import {
   Stethoscope,
 } from "lucide-react";
 import "./DoctorDashboard.css";
-const API_BASE = "http://localhost:5001/api";
+const API_BASE = "https://lifepredict-production.up.railway.app/api";
 function getLocalDateKey() {
   const date = new Date();
   const year = date.getFullYear();

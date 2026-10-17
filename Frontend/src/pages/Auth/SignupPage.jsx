@@ -115,7 +115,7 @@ function SignupPage() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5001/api/auth/signup",
+        "https://lifepredict-production.up.railway.app/api/auth/signup",
         {
           method: "POST",
 

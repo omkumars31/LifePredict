@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import "./Dashboard.css";
 
-const API = "http://localhost:5001/api";
+const API = "https://lifepredict-production.up.railway.app/api";
 
 /* NUTRITION HELPERS */
 const getTodayIndiaDate = () =>

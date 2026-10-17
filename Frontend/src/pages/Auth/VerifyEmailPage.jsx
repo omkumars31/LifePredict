@@ -47,7 +47,7 @@ function VerifyEmailPage() {
       try {
 
         const response = await fetch(
-          `http://localhost:5001/api/auth/verify-email?token=${encodeURIComponent(
+          `https://lifepredict-production.up.railway.app/api/auth/verify-email?token=${encodeURIComponent(
             token
           )}`
         );

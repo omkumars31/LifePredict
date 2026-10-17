@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import "./AlertsInsights.css";
 
-const API_BASE = "http://localhost:5001/api";
+const API_BASE = "https://lifepredict-production.up.railway.app/api";
 
 function numeric(value) {
   if (value === null || value === undefined || value === "") {

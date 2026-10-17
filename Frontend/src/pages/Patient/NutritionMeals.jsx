@@ -707,7 +707,7 @@ const getPortionGrams = (
    ========================================================= */
 
 const NUTRITION_API_BASE =
-  "http://localhost:5001/api/nutrition";
+  "https://lifepredict-production.up.railway.app/api/nutrition";
 
 const emptyNutrition = () => ({
   calories: null,
@@ -1450,7 +1450,7 @@ export default function NutritionMeals() {
         setLoadingHealth(true);
 
         const response = await fetch(
-          "http://localhost:5001/api/health-records",
+          "https://lifepredict-production.up.railway.app/api/health-records",
           {
             method: "GET",
             headers: {

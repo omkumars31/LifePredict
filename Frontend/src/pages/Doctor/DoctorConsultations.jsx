@@ -11,7 +11,7 @@ import {
   CalendarX2,
 } from "lucide-react";
 import "./DoctorConsultations.css";
-const API_BASE = "http\://localhost:5001/api";
+const API_BASE = "https://lifepredict-production.up.railway.app/api";
 /* =========================================================
    DATE HELPERS
 \========================================================= */

@@ -42,7 +42,7 @@ import {
 import "./DoctorPatientDetails.css";
 
 const API_BASE =
-  "http://localhost:5001/api";
+  "https://lifepredict-production.up.railway.app/api";
 
 function DoctorPatientDetails() {
   const { patientId } = useParams();

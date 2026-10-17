@@ -64,7 +64,7 @@ function ResetPasswordPage() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5001/api/auth/reset-password",
+        "https://lifepredict-production.up.railway.app/api/auth/reset-password",
         {
           method: "POST",
           headers: {

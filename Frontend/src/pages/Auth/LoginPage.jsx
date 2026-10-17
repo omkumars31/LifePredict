@@ -75,7 +75,7 @@ function LoginPage() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5001/api/auth/login",
+        "https://lifepredict-production.up.railway.app/api/auth/login",
         {
           method: "POST",
 
@@ -218,7 +218,7 @@ function LoginPage() {
       setResendingVerification(true);
 
       const response = await fetch(
-        "http://localhost:5001/api/auth/resend-verification",
+        "https://lifepredict-production.up.railway.app/api/auth/resend-verification",
         {
           method: "POST",
 

@@ -464,7 +464,7 @@ function PatientPredictions() {
       setLoadingDoctorHistory(true);
 
       const response = await fetch(
-        "http://localhost:5001/api/connections/patient/reviews?all=true",
+        "https://lifepredict-production.up.railway.app/api/connections/patient/reviews?all=true",
         {
           method: "GET",
           headers: {
@@ -505,7 +505,7 @@ function PatientPredictions() {
       }
 
       const response = await fetch(
-        "http://localhost:5001/api/connections/patient",
+        "https://lifepredict-production.up.railway.app/api/connections/patient",
         {
           method: "GET",
           headers: {
@@ -555,7 +555,7 @@ function PatientPredictions() {
         return;
       }
       const response = await fetch(
-        "http://localhost:5001/api/predictions/predict",
+        "https://lifepredict-production.up.railway.app/api/predictions/predict",
         {
           method: "POST",
           headers: {
@@ -591,7 +591,7 @@ console.log("PREDICTION RESULT:", data.prediction);
     if (!token) return;
 
     const response = await fetch(
-      "http://localhost:5001/api/health-records/today",
+      "https://lifepredict-production.up.railway.app/api/health-records/today",
       {
         method: "GET",
         headers: {

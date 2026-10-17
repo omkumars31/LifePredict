@@ -54,7 +54,7 @@ function VerifyEmailSentPage() {
       setResending(true);
 
       const response = await fetch(
-        "http://localhost:5001/api/auth/resend-verification",
+        "https://lifepredict-production.up.railway.app/api/auth/resend-verification",
         {
           method: "POST",
           headers: {

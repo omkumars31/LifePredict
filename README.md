@@ -259,7 +259,7 @@ VITE_API_URL=<your backend public URL>
 | Database | Railway MySQL | Schema imported; seven tables confirmed |
 | ML service | Not yet confirmed | Separate Python service that must be deployed and reachable from the backend |
 
-Live links: `<add frontend URL>` · `<add backend URL>`
+Live links: [Frontend](https://life-predict.vercel.app/) · Backend: URL not provided
 
 ---
 
@@ -304,6 +304,8 @@ Live links: `<add frontend URL>` · `<add backend URL>`
 
 ---
 
-## License
+## Author
 
-Add a license of your choice (e.g. MIT) before publishing.
+Built by **Om Kumar Singh**: [github.com/omkumars31](https://github.com/omkumars31)
+
+No license has been specified for this repository.
